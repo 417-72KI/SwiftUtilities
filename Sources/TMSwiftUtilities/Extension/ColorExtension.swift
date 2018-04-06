@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     /// Initializes and returns a color object using red, green, blue and alpha values.
     ///
@@ -16,7 +16,7 @@ extension UIColor {
     ///   - g: green(0-255)
     ///   - b: blue(0-255)
     ///   - a: alpha
-    convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
+    public convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
         self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: a)
     }
     
@@ -25,11 +25,11 @@ extension UIColor {
     /// - Parameters:
     ///   - decimal: hex color code
     ///   - alpha: alpha
-    convenience init(decimal: Int, alpha: CGFloat = 1.0) {
+    public convenience init(decimal: Int, alpha: CGFloat = 1.0) {
         self.init(r: ((decimal & 0xFF0000) >> 16), g: ((decimal & 0x00FF00) >> 8), b: ((decimal & 0x0000FF) >> 0), a: alpha)
     }
     
-    class func rgb(r: Int, g: Int, b: Int, a: CGFloat) -> UIColor {
+    public class func rgb(r: Int, g: Int, b: Int, a: CGFloat) -> UIColor {
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha:a)
     }
 }

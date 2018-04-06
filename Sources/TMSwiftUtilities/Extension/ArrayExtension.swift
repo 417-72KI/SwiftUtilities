@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension Array where Element: Hashable {
+public extension Array where Element: Hashable {
     
-    func unique() -> [Element] {
+    public func unique() -> [Element] {
         var r = [Element]()
         for i in self {
             r += !r.contains(i) ? [i] : []
